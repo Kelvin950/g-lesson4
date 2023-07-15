@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"unsafe"
 )
 
 
@@ -64,6 +65,31 @@ func main(){
 	crecu(a) ;
   
 	 
+
+	//let see some changes  with the internal part of slice
+
+	arr1 := []int{1,2,3,44} 
+
+	slice1 ,slice2 := make([]int , 4) , make([]int, 5) 
+
+	copy(slice1 , arr1) 
+	copy(slice2,arr1)
+ 
+   
+arr1[1] =  100 
+
+fmt.Println(slice1, slice2)
+
+ //checking memory size 
+
+  aew := [5]int{1,2,3,4,5} 
+ aswe := []int{1,2,3,4,5,6} 
+
+ fmt.Println(unsafe.Sizeof(aew))
+ fmt.Println(unsafe.Sizeof(aswe))
+
+
+  
 }
 
 
