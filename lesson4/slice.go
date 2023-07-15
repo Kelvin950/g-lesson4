@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	
+	"math"
 )
 
 
@@ -53,5 +52,36 @@ func main(){
 	   fmt.Println(src , dst ) ;
 	
 
+	 a := []int {1,2,3,4,5}  
+	 start ,stop := 0,  3  
+
+	fmt.Println( a[start:stop])
+ 
+	dst = make([]int ,len(numbers)-1) 
+
+	copy(dst ,append(numbers[:3] , 100)) 
+	fmt.Println(dst)
+	crecu(a) ;
+  
+	 
+}
+
+
+func crecu ( r[]int) {
+
+
+	if(len(r) >0){
+ 
+	  
+	midlle := int(math.Round(float64(len(r)/2)))
+
+ 
+
+	crecu(r[0:midlle]) 
+	    fmt.Println(r , 22) ;
+ crecu(r[midlle:len(r)-1])
+	}
+ 
 	
+
 }
