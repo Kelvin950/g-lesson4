@@ -88,8 +88,26 @@ fmt.Println(slice1, slice2)
  fmt.Println(unsafe.Sizeof(aew))
  fmt.Println(unsafe.Sizeof(aswe))
 
-
+ 
+ muslice := []float64{1.2, 1.3 , 1.2} 
+ muslice =  append(muslice, []float64{1.3,1.4,5.5}...)
   
+
+ fmt.Println(muslice[:3])
+ var muslice2  =  []float64{}
+ 
+ muslice2 =  append(muslice2, muslice...)
+ fmt.Print(muslice2)
+
+  years := []int{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010}
+  
+  newYears :=  []int{} 
+
+   newYears =   append(years[:3], years[len(years)-3:]...)
+
+   fmt.Println(newYears)
+
+    
 }
 
 
@@ -108,6 +126,9 @@ func crecu ( r[]int) {
  crecu(r[midlle:len(r)-1])
 	}
  
+
 	
+
+
 
 }
